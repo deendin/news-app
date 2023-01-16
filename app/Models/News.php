@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\NewsCreated;
 use App\Traits\HasOlderRecords;
 use App\Traits\HasUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,6 +16,15 @@ class News extends Model
     use HasUuid;
     use SoftDeletes;
     use HasOlderRecords;
+
+    /**
+     * The event map for the model.
+     * 
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'created' => NewsCreated::class
+    ];
 
     public function user() : BelongsTo
     {
