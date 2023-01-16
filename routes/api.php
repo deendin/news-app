@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('news')->group(function() {
+Route::middleware('auth:sanctum')
+->prefix('news')->group(function() {
     Route::get('/', [NewsController::class, 'index']);
     Route::post('/create', [NewsController::class, 'store'])->name('api.news.store');
     Route::put('/{news}', [NewsController::class, 'update'])->name('api.news.update');
