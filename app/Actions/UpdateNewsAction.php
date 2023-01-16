@@ -3,16 +3,18 @@
 namespace App\Actions;
 
 use App\Models\News;
+use App\Models\User;
 
 class UpdateNewsAction
 {
     /**
      * Updates the news.
      * 
+     * @param \App\Models\User $user
      * @param \App\Models\News $news
      * @param array $data
      */
-    public function update(News $news, array $data) : News
+    public function update(User $user, News $news, array $data) : News
     {
         if ( isset($data['title']) ) {
 

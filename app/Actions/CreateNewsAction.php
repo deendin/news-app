@@ -3,6 +3,7 @@
 namespace App\Actions;
 
 use App\Models\News;
+use App\Models\User;
 
 class CreateNewsAction
 {
@@ -10,19 +11,18 @@ class CreateNewsAction
     /**
      * Creates the news.
      * 
+     * @param \App\Models\User $user
      * @param array $data
      * 
      * @return \App\Models\News
      */
-    public function create(array $data)
+    public function create(User $user, array $data)
     {
         $news = new News();
 
         $news->title = $data['title'];
         $news->content = $data['content'];
-        // hard code the user id for now, untill we have an authentication system.
-        // Ideally, this should come from an auth provider - e.g: sancum or jwt
-        $news->user_id = 1; 
+        $news->user_id = $user->id;
         
         $news->save();
 
