@@ -3,7 +3,7 @@
 
 Hello {{ $user->name }},
 
-Thisssss is to notify you that you have now successfully created a news. The news details are as follows:
+This is to notify you that you have now successfully created a news. The news details are as follows:
 
 <b> Title: </b> {{ $news->title }} </br> </br>
 
