@@ -1,7 +1,7 @@
 # A Simple News System..
 
 ### Overview.
-This is a News app that allows users to create a news, edit news, delete news and update news. 
+This is a News app that allows users to create a news, edit news, delete news and show all news. 
 
 As per requirement, the database used is sqlite database, upon creating a news, an event is dispatched which simply sends an email to the news owner (user_id) containting the news details such as the title and content. A simple logger can also be found in the storage logs file which is a simple text saying that the news has been created "News Created".
 
