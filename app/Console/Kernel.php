@@ -16,6 +16,13 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        
+        // News commands - To allow the increment of the number of older records that needs
+        // to be deleted, parse a parameter to the end of the command e.g: 
+        // 'news:delete-older-records 4' parsing 4 will delete records older than 4 days, 
+        // but the default is set to 14 based on the specification for this challenge
+        
+        $schedule->command('news:delete-older-records')->daily();
     }
 
     /**
