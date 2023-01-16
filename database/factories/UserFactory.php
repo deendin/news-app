@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\News;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -36,5 +38,19 @@ class UserFactory extends Factory
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
         ]);
+    }
+
+    /**
+     * Associate this user with news
+     * 
+     */
+    public function withNews()
+    {
+        return $this->has(
+            News::factory()
+                ->state(function (array $attributes, User $user) {
+                    return ['user_id' => $user->id];
+                })
+        );
     }
 }

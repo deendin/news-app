@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\CreateNewsAction;
+use App\Actions\DeleteNewsAction;
+use App\Actions\UpdateNewsAction;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use App\Http\Resources\NewsCollection;
