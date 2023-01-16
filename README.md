@@ -60,16 +60,16 @@ Before setting up this repository, the following are the dependencies that needs
 
 ## Instruction and testing
 1. Running `php artisan test` will test all the feature tests e.g: The create news, update news, delete news, show news features and its JSON expected responses and results.
-2. Testing from POSTMAN is also possible by hitting the endpoints states in the overview above. Note that the endpoints are protected using Laravels default authentication system for API's - Laravel Sanctum. To successfully call the endpoints from POSTMAN or via CURL, it is expected to parse a header to every single request. This header can be called: key: 'Authorisation' and should have a value of the generated token which must have been generated when the user registers. But because this system doesn't have an auth system to register and login a user, the test cases has a way of creating a user and generating a user token which is then parsed and used on every request to call the endpoints/routes.
+2. Testing from POSTMAN is also possible by hitting the endpoints stated in the overview section above. Note that the endpoints are protected using Laravels default authentication system for API's - [Laravel Sanctum](https://laravel.com/docs/9.x/sanctum). To successfully call the endpoints from `POSTMAN` or via `CURL`, it is expected to parse a header to every single request. This header can be called: key: `Authorisation` and should have a value of the generated `token` which must have been generated when the user registers. But because this system doesn't require that we have an auth system to register and login a user, the test cases has a way of creating a user and generating a user `token` which is then parsed and used on every request to call the endpoints/routes.
 So, runining the test command should be enough to test the functionalities for the time being.
 
 
 ### Example Output - When a news gets created either from the test or Postman
 <img width="1302" alt="example_input" src="https://user-images.githubusercontent.com/118926333/212630085-e7662451-3125-41f4-976c-337cc150e95b.png">
 
-### What I could have done better if I had more time (Mostly out of the task specification):
+### What I could have done better if I had more time:
 
-1. More tests for each feature test to test for the console command event though there is a test for the Job that gets triggered to delete the older News.
+1. More tests for each feature test to test. For example, More test to test for the console command even though there is a test for the Job that gets triggered to delete the older News.
 2. Lint to lint the code files.
 3. Handle pagination of news listing.
-4. Although, the feature test for the CRUD function tests the expected JSON responses and results, in a more production ready system, it would be ideal to test the Resources and Collections that returns the data.
+4. Although, the feature test for the CRUD function already tests the expected JSON responses and results, in a more production ready system, it would be ideal to test the Resources and Collections that returns the data.
