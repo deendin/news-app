@@ -25,7 +25,7 @@ class NewsDeleteTest extends TestCase
     }
 
     /** @test */
-    public function a_guest_cannot_delete_a_vehicle()
+    public function a_guest_cannot_delete_a_news()
     {
         $this->deleteJson(route('api.news.destroy', 1))
             ->assertUnauthorized();
